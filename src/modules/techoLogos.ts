@@ -7,6 +7,10 @@ import k8sLogo from "../images/kubernets.svg";
 import nextLogo from "../images/next-js.svg";
 import tailwindLogo from "../images/tailwind-css.svg";
 import jsLogo from "../images/javascript.svg";
+import cssLogo from "../images/css.svg";
+import htmlLogo from "../images/html.svg";
+import pythonLogo from "../images/python.svg";
+import cSharpLogo from "../images/csharp.svg";
 
 const LOGOS = [
   { name: "JavaScript", url: jsLogo },
@@ -18,6 +22,10 @@ const LOGOS = [
   { name: "Docker", url: dockerLogo },
   { name: "Kubernetes", url: k8sLogo },
   { name: "Vue.js", url: vueLogo },
+  { name: "HTML", url: htmlLogo },
+  { name: "CSS", url: cssLogo },
+  { name: "Python", url: pythonLogo },
+  { name: "C#", url: cSharpLogo },
 ];
 
 export { LOGOS };

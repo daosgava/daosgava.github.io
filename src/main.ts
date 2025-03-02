@@ -46,10 +46,10 @@ const aboutMarkup = `
         </li>
       </ul>
     </div>
+    <p class="tech-stack-title">
+      Technology Stack:
+    </p>
     <div class="tech-stack">
-      <p class="tech-stack-title">
-        Technology Stack
-      </p>
       <div class="tech-logos">
         ${LOGOS.map((logo) => `<div class="logo"><img src="${logo.url}" alt="${logo.name}"/><p>${logo.name}</p></div>`).join(" ")}
       </div>
