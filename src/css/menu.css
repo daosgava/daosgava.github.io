@@ -7,10 +7,21 @@
     justify-content: space-between;
     padding-bottom: 1rem;
     width: 30rem;
-}
 
-.menu-item {
-    transition: all 200ms;
+    & img {
+        transition: all 200ms;
+        width: 1.1rem;
+    }
+
+    & img:hover {
+        transform: scale(110%);
+        transform: rotate(180deg);
+        width: 1.2rem;
+    }
+
+    & .menu-item {
+        transition: all 200ms;
+    }
 }
 
 .blur {

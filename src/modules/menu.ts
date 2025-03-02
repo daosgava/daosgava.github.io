@@ -1,7 +1,9 @@
 import { modeSwitchMarkup } from "./modeSwitch";
+import logo from "../images/logo.png";
 
 const menuMarkup = `
   <nav class="menu">
+    <a class="menu-item" href="#home"><img src="${logo}" alt="Daniel Garcia - Software Developer"/></a>
     <a class="menu-item" href="#about">About</a>
     <a class="menu-item" href="#experience">Experience</a>
     <a class="menu-item" href="#projects">Projects</a>
