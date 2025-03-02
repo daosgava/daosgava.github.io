@@ -1,0 +1,34 @@
+.menu {
+    align-items: center;
+    background-color: var(--bg-color);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    width: 30rem;
+}
+
+.menu-item {
+    transition: all 200ms;
+}
+
+.blur {
+    filter: blur(0.15rem);
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.cursor {
+    position: fixed;
+    width: 6rem;
+    height: 6rem;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-out;
+}

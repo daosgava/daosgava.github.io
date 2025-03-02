@@ -1,11 +1,11 @@
-import { modeSwitchMarkup } from "./nodeSwitch";
+import { modeSwitchMarkup } from "./modeSwitch";
 
 const menuMarkup = `
   <nav class="menu">
-    <a class="menu-item" href="#profile">Profile</a>
+    <a class="menu-item" href="#about">About</a>
     <a class="menu-item" href="#experience">Experience</a>
     <a class="menu-item" href="#projects">Projects</a>
-    <a class="menu-item" href="#skill">Skills</a>
+    <a class="menu-item" href="contact">Contact</a>
     ${modeSwitchMarkup}
   </nav>
 `;

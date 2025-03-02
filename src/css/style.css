@@ -1,72 +1,3 @@
-@import "./reset.css";
-
-:root {
-    --light-color: #ffffff;
-    --dark-color: #1a1a1a;
-    --bg-color: var(--light-color);
-    --text-color: var(--dark-color);
-
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    line-height: 1.5;
-    font-weight: 400;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    scroll-behavior: smooth;
-}
-
-.dark-mode {
-    --bg-color: var(--dark-color);
-    --text-color: var(--light-color);
-}
-
-.light-mode {
-    --bg-color: var(--light-color);
-    --text-color: var(--dark-color);
-}
-
-body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    height: 100%;
-}
-
-a {
-    color: var(--text-color);
-    cursor: pointer;
-    font-weight: 500;
-    text-decoration: inherit;
-}
-
-h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-}
-
-button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    color: var(--text-color);
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: var(--bg-color);
-    cursor: pointer;
-    transition: border-color 0.25s;
-}
-button:hover {
-    border-color: darkgrey;
-}
-button:focus,
-button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-}
-
-section {
-}
-
 #app {
     display: flex;
     flex-direction: column;
@@ -79,6 +10,7 @@ section {
     justify-content: center;
     position: fixed;
     width: 100%;
+    z-index: 10;
 }
 
 .section-container {
@@ -104,61 +36,108 @@ section {
     letter-spacing: 1rem;
 }
 
-.menu {
-    align-items: center;
-    background-color: var(--bg-color);
-    border-radius: 1rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-bottom: 1rem;
-    width: 30rem;
-}
-
-#mode-switch {
-    border-radius: 4rem;
-    height: 1rem;
-    padding: 0;
-    outline: none;
-    transition: all 300ms;
-    will-change: filter;
-    width: 1rem;
-}
-
-#mode-switch {
-    &.light-mode {
-        filter: drop-shadow(0 0 0.5em black);
-    }
-    &.dark-mode {
-        filter: drop-shadow(0 0 0.5em white);
-    }
-}
-
-.menu-item {
-    transition: all 300ms;
-}
-
-.blur {
-    filter: blur(0.2rem);
-}
-
-.hidden {
-    opacity: 0;
-}
-
-.cursor {
-    position: fixed;
-    width: 6rem;
-    height: 6rem;
-    background: white;
-    border-radius: 50%;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease-out;
-}
-
 .experience-item {
     text-align: left;
     width: 100%;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 4rem;
+
+    & .subtitle {
+        font-size: 4rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    & .tech-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        width: 100%;
+
+        & .tech-stack-title {
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        & .tech-logos {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            overflow-x: scroll;
+
+            & .logo {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                height: 4rem;
+                width: 4rem;
+
+                & img {
+                    display: inline;
+                    filter: grayscale();
+                    height: 3rem;
+                    transition: all 200ms;
+                    width: 2rem;
+                }
+
+                & p {
+                    transition: all 200ms;
+                }
+            }
+
+            & .logo:hover {
+                & p {
+                    font-weight: 600;
+                }
+
+                & img {
+                    transform: scale(110%);
+                    filter: unset;
+                }
+            }
+        }
+    }
+
+    & .more-links {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: 100%;
+
+        & .link {
+            display: flex;
+            flex-direction: column;
+
+            & a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+    }
+}
+
+.about-content {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+
+    & .highlight {
+        font-weight: 300;
+        font-size: 2.5rem;
+        max-width: 50%;
+    }
+
+    & li {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
 }
