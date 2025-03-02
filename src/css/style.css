@@ -94,6 +94,7 @@
                 }
 
                 & p {
+                    font-weight: 500;
                     transition: all 200ms;
                 }
             }
@@ -125,6 +126,10 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+
+                & .external-icon {
+                    transform: rotate(-45deg);
+                }
             }
         }
     }

@@ -9,8 +9,6 @@ import tailwindLogo from "../images/tailwind-css.svg";
 import jsLogo from "../images/javascript.svg";
 import cssLogo from "../images/css.svg";
 import htmlLogo from "../images/html.svg";
-import pythonLogo from "../images/python.svg";
-import cSharpLogo from "../images/csharp.svg";
 
 const LOGOS = [
   { name: "JavaScript", url: jsLogo },
@@ -24,8 +22,6 @@ const LOGOS = [
   { name: "Vue.js", url: vueLogo },
   { name: "HTML", url: htmlLogo },
   { name: "CSS", url: cssLogo },
-  { name: "Python", url: pythonLogo },
-  { name: "C#", url: cSharpLogo },
 ];
 
 export { LOGOS };

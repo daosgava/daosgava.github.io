@@ -27,7 +27,7 @@ const homeMarkup = `
 
 const aboutMarkup = `
   <section id="about" class="section-container">
-    <h2 class="subtitle">About <hr></h2>
+    <h2 class="subtitle">About me<hr></h2>
 
     <div class="about-content">
       <h3 class="highlight">
@@ -52,15 +52,16 @@ const aboutMarkup = `
     <div class="tech-stack">
       <div class="tech-logos">
         ${LOGOS.map((logo) => `<div class="logo"><img src="${logo.url}" alt="${logo.name}"/><p>${logo.name}</p></div>`).join(" ")}
+        <em>...among others</em>
       </div>
     </div>
     <div class="more-links">
       <div class="link">
-        <a href="https://github.com/daosgava" target="_blank">Explore Github ⬈</a>
+        <a href="https://github.com/daosgava" target="_blank">Explore Github <span class="external-icon">→<span class="external-icon"></a>
         <hr>
       </div>
       <div class="link">
-        <a href="https://www.linkedin.com/in/danielgarciavargas/" target="_blank">LinkedIn ⬈</a>
+        <a href="https://www.linkedin.com/in/danielgarciavargas/" target="_blank">LinkedIn <span class="external-icon">→</span></a>
         <hr>
       </div>
     </div>
