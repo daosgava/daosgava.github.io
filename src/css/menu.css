@@ -8,15 +8,20 @@
     padding: 1rem;
     width: 30rem;
 
-    & img {
+    & .logo {
         transition: all 200ms;
+    }
+
+    & img {
         width: 1.1rem;
     }
 
-    & img:hover {
+    & .logo:hover {
         transform: scale(110%);
         transform: rotate(180deg);
-        width: 1.2rem;
+        & img {
+            width: 1.2rem;
+        }
     }
 
     & .menu-item {
@@ -26,20 +31,4 @@
 
 .blur {
     filter: blur(0.15rem);
-}
-
-.hidden {
-    opacity: 0;
-}
-
-.cursor {
-    position: fixed;
-    width: 6rem;
-    height: 6rem;
-    background: white;
-    border-radius: 50%;
-    pointer-events: none;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease-out;
 }

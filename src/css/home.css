@@ -1,0 +1,28 @@
+.title {
+    font-style: italic;
+    letter-spacing: 3rem;
+    font-size: 5rem;
+}
+
+.subtitle {
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 1rem;
+}
+
+.cursor {
+    position: fixed;
+    width: 6rem;
+    height: 6rem;
+    background: white;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-out;
+}
+
+.hidden {
+    opacity: 0;
+}
