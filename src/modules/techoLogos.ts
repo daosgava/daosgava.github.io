@@ -14,14 +14,14 @@ const LOGOS = [
   { name: "JavaScript", url: jsLogo },
   { name: "TypeScrip", url: tsLogo },
   { name: "React", url: reactLogo },
-  { name: "Node.js", url: nodeLogo },
   { name: "Next.js", url: nextLogo },
-  { name: "TailwindCSS", url: tailwindLogo },
+  { name: "Vue.js", url: vueLogo },
+  { name: "Node.js", url: nodeLogo },
   { name: "Docker", url: dockerLogo },
   { name: "Kubernetes", url: k8sLogo },
-  { name: "Vue.js", url: vueLogo },
   { name: "HTML", url: htmlLogo },
   { name: "CSS", url: cssLogo },
+  { name: "TailwindCSS", url: tailwindLogo },
 ];
 
 export { LOGOS };

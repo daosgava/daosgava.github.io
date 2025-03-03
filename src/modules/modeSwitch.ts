@@ -5,7 +5,8 @@ const MODE = {
 
 type Mode = (typeof MODE)[keyof typeof MODE];
 
-const setMode = (newMode: Mode) => {
+const setMode = (mode: Mode) => {
+  const newMode = localStorage.getItem("mode") || mode;
   const modeSwitch = document.querySelector("#mode-switch");
   const htmlElement = document.querySelector("html");
 
@@ -21,23 +22,23 @@ const toggleMode = (event: Event) => {
   const currentMode = (event.currentTarget as HTMLButtonElement).value;
   const isLightMode = currentMode === MODE.light;
   const newMode = isLightMode ? MODE.dark : MODE.light;
+  localStorage.setItem("mode", newMode);
 
   setMode(newMode);
 };
 
 const setSytemMode = () => {
-  const isDarkMode = window.matchMedia(`(prefers-color-scheme: dark)`).matches;
-
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const systemMode = isDarkMode ? MODE.dark : MODE.light;
   setMode(systemMode);
 };
 
 const colorSchemeQuery = window.matchMedia("(prefers-color-scheme: dark)");
-colorSchemeQuery.addEventListener("change", () => setSytemMode);
+colorSchemeQuery.addEventListener("change", () => setSytemMode());
 
 const initializeSwitchMode = () => {
   const modeSwitch = document.querySelector("#mode-switch");
-  modeSwitch!.addEventListener("click", toggleMode);
+  modeSwitch!.addEventListener("click", (e) => toggleMode(e));
   setSytemMode();
 };
 
