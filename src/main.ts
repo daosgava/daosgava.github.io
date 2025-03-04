@@ -4,6 +4,7 @@ import "./css/style.css";
 import "./css/modeSwitch.css";
 import "./css/menu.css";
 import "./css/home.css";
+import "./css/about.css";
 
 import { initializeSwitchMode } from "./modules/modeSwitch";
 import { initializeCursor } from "./modules/specialCursor";

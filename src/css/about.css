@@ -1,0 +1,111 @@
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-block: 4rem;
+
+    & .subtitle {
+        font-size: 4rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    & .tech-stack-title {
+        font-style: italic;
+        font-size: 2rem;
+        font-weight: 300;
+        text-align: left;
+        width: 100%;
+    }
+
+    & .tech-stack {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        overflow-x: auto;
+        width: 100%;
+
+        & .tech-logos {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            overflow-x: scroll;
+            width: max-content;
+
+            & .logo {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                height: 4rem;
+                width: 4rem;
+
+                & img {
+                    filter: grayscale();
+                    height: 3rem;
+                    transition: all 200ms;
+                    width: 2rem;
+                }
+
+                & p {
+                    font-weight: 500;
+                    transition: all 200ms;
+                }
+            }
+
+            & .logo:hover {
+                & p {
+                    font-weight: 600;
+                }
+
+                & img {
+                    transform: scale(110%);
+                    filter: unset;
+                }
+            }
+        }
+    }
+
+    & .more-links {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: 100%;
+
+        & .link {
+            display: flex;
+            flex-direction: column;
+
+            & a {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                & .external-icon {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}
+
+.about-content {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+
+    & .highlight {
+        font-weight: 300;
+        font-size: 2rem;
+        max-width: 50%;
+    }
+
+    & li {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+}
