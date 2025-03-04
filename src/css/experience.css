@@ -1,0 +1,86 @@
+#experience {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding-block: 5rem;
+
+    & .subtitle {
+        font-size: 4rem;
+        text-align: left;
+        width: 100%;
+    }
+
+    & .jobs {
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        width: 100%;
+
+        & .jobs-container {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+            text-align: left;
+            width: max-content;
+
+            & section {
+                border-right: solid;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 2rem;
+                width: 48vw;
+
+                & .job {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    & .logos-container {
+                        display: flex;
+                        flex-direction: column;
+                        height: 8rem;
+                        gap: 1rem;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        align-items: center;
+
+                        & .logo {
+                            align-items: center;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            height: 3rem;
+                            width: 3rem;
+
+                            & img {
+                                filter: grayscale();
+                                height: 2rem;
+                                width: 2rem;
+                            }
+
+                            & p {
+                                font-weight: 500;
+                            }
+                        }
+                    }
+                }
+
+                & a {
+                    text-decoration: underline;
+                }
+
+                & .controls {
+                    display: flex;
+                    justify-content: right;
+                    bottom: 2rem;
+
+                    & a {
+                        font-size: 2rem;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+}
