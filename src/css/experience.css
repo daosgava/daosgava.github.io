@@ -1,7 +1,6 @@
 #experience {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
     padding-block: 5rem;
 
     & .subtitle {
@@ -23,10 +22,11 @@
             width: max-content;
 
             & section {
-                border-right: solid;
+                border-right: .2rem solid;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
+                height: max-content;
                 padding: 2rem;
                 width: 48vw;
 
@@ -55,11 +55,21 @@
                             & img {
                                 filter: grayscale();
                                 height: 2rem;
+                                transition: all 200ms;
                                 width: 2rem;
                             }
 
                             & p {
                                 font-weight: 500;
+                            }
+                        }
+
+                        & .logo:hover {
+
+                            & img {
+                                filter: unset;
+                                height: 2.2rem;
+                                width: 2.2rem;
                             }
                         }
                     }
@@ -69,18 +79,39 @@
                     text-decoration: underline;
                 }
 
+                & .description-container {
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 10rem;
+                    gap: 1rem;
+                }
+
                 & .controls {
                     display: flex;
-                    justify-content: right;
-                    bottom: 2rem;
+                    justify-content: center;
 
                     & a {
+                        border-radius: 4rem;
+                        display: flex;
+                        justify-content: center;
                         font-size: 2rem;
+                        height: 3rem;
                         text-decoration: none;
+                        transition: all 300ms;
+                        width: 3rem;
+                        z-index: 10;
+                    }
+
+                    & .next-job {
+                        transform: rotate(180deg);
+                    }
+
+                    & a:hover {
+                        background-color: var(--text-color);
+                        color: var(--bg-color);
                     }
                 }
             }
         }
     }
-
 }

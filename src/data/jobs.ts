@@ -8,7 +8,10 @@ const JOBS = [
     duration: "Jul 2024 - Present",
     description:
       "Ironbark Sustainability helps councils and their communities reduce greenhouse emissions.",
-    responsibilities: ["Maintaining and improving the Opticity portal."],
+    responsibilities: [
+      "Developed reusable and modular UI components while following best coding practices.",
+      "Refactored and optimized backend services to enhance performance and scalability.",
+    ],
     technologies: [
       "React.js",
       "Node.js",
@@ -22,14 +25,14 @@ const JOBS = [
     title: "Sr Developer",
     company: {
       name: "Knot",
-      url: "#"
+      url: "#",
     },
     duration: "Nov 2023 - Jul 2024",
     description:
       "Knot is a startup specializing in innovative software solutions.",
     responsibilities: [
-      "Migrated a web application from Azure to AWS, leveraging the AWS ecosystem.",
-      "Implemented a microservices architecture.",
+      "Migrated a web application from Azure to AWS, implementing a microservices architecture and leveraging the AWS ecosystem.",
+      "Developed and managed infrastructure assets using Infrastructure as Code (IaC).",
     ],
     technologies: [
       "Terraform",
@@ -44,22 +47,30 @@ const JOBS = [
     title: "Sr Developer",
     company: {
       name: "Bixlabs",
-      url: "https://bixlabs.com/"
+      url: "https://bixlabs.com/",
     },
     duration: "Mar 2023 - Oct 2023",
     description:
       "Bixlabs is a company that offers nearshore staff augmentation services to startups in the U.S.",
     additional_info: "Worked for The Institute of Applied Metatheory.",
     responsibilities: [
-      "Developed an application integrated with the OpenAI API.",
+      "Developed a Figma-like application for generating compositions and diagrams.",
+      "Worked on both the frontend and backend, and integrated with the OpenAI API.",
     ],
-    technologies: ["Vue.js", "Nest.js", "Pinia", "TailwindCSS", "React.js", "Node.js",],
+    technologies: [
+      "Vue.js",
+      "Nest.js",
+      "Pinia",
+      "TailwindCSS",
+      "React.js",
+      "Node.js",
+    ],
   },
   {
     title: "Fullstack Developer",
     company: {
       name: "Yuxi Global",
-      url: "https://yuxiglobal.com"
+      url: "https://yuxiglobal.com",
     },
     duration: "Jun 2021 - Mar 2023",
     description:
@@ -77,13 +88,12 @@ const JOBS = [
       "AWS",
       "Socket.IO",
     ],
-    achievements: ["Convene Hackathon Winner 2021"],
   },
   {
     title: "Frontend Developer",
     company: {
       name: "Zemoga",
-      url: "http://zemoga.com"
+      url: "http://zemoga.com",
     },
     duration: "Aug 2019 - Jun 2021",
     description:
@@ -91,8 +101,8 @@ const JOBS = [
     additional_info:
       "Collaborated on projects for clients such as Jet/Walmart and Morningstar.",
     responsibilities: [
-      "Implemented and integrated micro frontend components into Jupyter Lab using Vue.js and Python.",
-      "Implemented and integrated CCPA regulations into jet.com using React.js, Node.js, and GraphQL.",
+      "Implemented and integrated micro frontend components into Jupyter Lab.",
+      "Implemented and integrated CCPA regulations into jet.com.",
     ],
     technologies: [
       "Vue.js",

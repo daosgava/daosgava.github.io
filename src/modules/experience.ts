@@ -5,7 +5,7 @@ const nextButton = (index: number) => {
   if (index < JOBS.length && index % 2 !== 0) {
     console.log(Number(JOBS[index + 2] ? 2 : 1));
     const nextIndex = index + Number(JOBS[index + 2] ? 2 : 1);
-    return `<a class="next-job" href="#experience-${nextIndex}"> ➡︎</a>`;
+    return `<a class="next-job" href="#experience-${nextIndex}">⬅︎</a>`;
   }
 
   return "";
@@ -20,15 +20,21 @@ const previousButton = (index: number) => {
 };
 
 const technologiesLogos = (technologies: string[]) => {
-  return technologies.map((techName) => {
-    const logo = LOGOS.find((logo) => logo.name === techName);
+  return technologies
+    .map((techName) => {
+      const logo = LOGOS.find((logo) => logo.name === techName);
 
-    return `<div class="logo">
-    ${
-      logo?.name ? `<img class= "logo" src = "${logo?.url}" alt = "${logo?.name}" /> `: ""
-    }  <p>${techName}</p>
-    </div>`;
-  }).join("");
+      return (`
+        <div class="logo">
+          ${
+            logo?.name
+              ? `<img class= "logo" src = "${logo?.url}" alt = "${logo?.name}" /> `
+              : ""
+          } <p>${techName}</p>
+        </div>
+      `);
+    })
+    .join("");
 };
 
 const experienceMarkup = `
@@ -44,14 +50,15 @@ const experienceMarkup = `
                 <h2>${job.title} <small>at</small> <a href="${job.company.url}" target="_blank"><em>${job.company.name}</em></a></h2>
                 <em>${job.duration}</em>
               </div>
-              <p>${job.description}</p>
-              ${job.additional_info ? `<p><strong>${job.additional_info}</strong></p>` : ""}
-              <ul>
-                ${job.responsibilities.map((resp) => `<li>${resp}</li>`).join("")}
-              </ul>
+              <div class="description-container">
+                <p>${job.description}</p>
+                ${job.additional_info ? `<p><strong>${job.additional_info}</strong></p>` : ""}
+                <ul>
+                  ${job.responsibilities.map((resp) => `<li>${resp}</li>`).join("")}
+                </ul>
+              </div>
               <p><strong>Technologies:</strong> </p>
               <div class="logos-container">${technologiesLogos(job.technologies)}</div>
-              ${job.achievements ? `<p><strong>Achievements:</strong> ${job.achievements.join(", ")}</p>` : ""}
             </div>
             <div class="controls">
               ${nextButton(Number(index))}
