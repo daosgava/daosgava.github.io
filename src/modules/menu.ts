@@ -7,7 +7,7 @@ const menuMarkup = `
     <a class="menu-item" href="#about">About Me</a>
     <a class="menu-item" href="#experience">Experience</a>
     <a class="menu-item" href="#projects">Projects</a>
-    <a class="menu-item" href="contact">Contact</a>
+    <a class="menu-item" href="#contact">Contact</a>
     ${modeSwitchMarkup}
   </nav>
 `;

@@ -7,6 +7,8 @@ import "./css/home.css";
 import "./css/about.css";
 import "./css/experience.css";
 import "./css/projects.css";
+import "./css/footer.css";
+import "./css/contact.css"
 
 import { initializeSwitchMode } from "./modules/modeSwitch";
 import { initializeCursor } from "./modules/specialCursor";
@@ -17,6 +19,8 @@ import { headerMarkup } from "./modules/header";
 import { aboutMarkup } from "./modules/about";
 import { experienceMarkup, initializeJobsCarousel } from "./modules/experience";
 import { projectMarkup } from "./modules/projects";
+import { contactMarkup } from "./modules/contact";
+import { footerMarkup } from "./modules/footer";
 
 const appElement = document.querySelector<HTMLDivElement>("#app");
 
@@ -30,6 +34,10 @@ appElement!.innerHTML = `
   ${experienceMarkup}
 
   ${projectMarkup}
+
+  ${contactMarkup}
+
+  ${footerMarkup}
 `;
 
 const initializePage = () => {

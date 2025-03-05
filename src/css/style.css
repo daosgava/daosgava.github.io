@@ -1,7 +1,8 @@
 #app {
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding-inline: 2rem;
+    padding-block-start: 2rem;
 }
 
 .header {

@@ -1,0 +1,26 @@
+footer {
+    border-top: .2rem solid var(--text-color);
+    display: flex;
+    flex-direction: row;
+    font-weight: 500;
+    justify-content: space-between;
+    padding-block: 1rem;
+
+    & .links {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+
+        & .link {
+            & a {
+                display: flex;
+                flex-direction: row;
+
+                & .external-icon {
+                    display: flex;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+}

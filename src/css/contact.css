@@ -1,0 +1,17 @@
+#contact {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50vh;
+
+    & .subtitle {
+        font-size: 5rem;
+        font-weight: 600;
+        text-align: left;
+        width: 100%;
+    }
+
+    & .email {
+        font-size: 4rem;
+    }
+}

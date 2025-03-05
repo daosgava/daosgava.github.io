@@ -2,14 +2,25 @@ import { JOBS } from "../data/jobs";
 import { LOGOS } from "../modules/techoLogos";
 import { createState } from "../utils/stateManager";
 
+const window = 2;
+
+const renderPageCounter = (current: number) => {
+  const numOfPages = Math.ceil(JOBS.length / window)
+  const currentPage = Math.floor((current / JOBS.length) * numOfPages);
+  const pageCounter = document.querySelector(".page-counter");
+  pageCounter!.innerHTML = `${currentPage} of ${numOfPages}`;
+};
+
 const renderJobs = (start: number, end: number) => {
   const jobsContainer = document.querySelector(".jobs-container");
   jobsContainer?.classList.add("transparent");
+  renderPageCounter(end);
+
   setTimeout(() => {
     jobsContainer?.classList.remove("transparent");
     const jobs = JOBS.slice(start, end)
       .map(
-        (job, index) => `
+        (job) => `
       <div class="job">
         <div class="job-title">
           <h2>${job.title} <small>at</small> <a href="${job.company.url}" target="_blank"><em>${job.company.name}</em></a></h2>
@@ -25,7 +36,6 @@ const renderJobs = (start: number, end: number) => {
         <p><strong>Technologies:</strong> </p>
         <div class="logos-container">${technologiesLogos(job.technologies)}</div>
       </div>
-      ${index % 2 === 0 && end <= JOBS.length ? "<div class='vertical-line'></div>": ""}
     `,
       )
       .join("");
@@ -38,7 +48,6 @@ const toggleControls = (currentIndex: number) => {
   const nextButton = document.querySelector(".jobs .next");
   nextButton?.classList.remove("transparent");
   previousButton?.classList.remove("transparent");
-  const window = 2;
 
   if(currentIndex + window >= JOBS.length) {
     nextButton?.classList.add("transparent");
@@ -58,7 +67,6 @@ type HandleClickControlProps = {
 };
 
 const handleClickControl = ({ indexState, operation }: HandleClickControlProps) => {
-  const window = 2;
   const value = indexState.getState();
 
   if (operation === "next" && value + window >= JOBS.length) return;
@@ -73,7 +81,7 @@ const handleClickControl = ({ indexState, operation }: HandleClickControlProps) 
 const initializeJobsCarousel = () => {
   const { getState, setState } = createState(0);
 
-  renderJobs(0, 2);
+  renderJobs(0, window);
   toggleControls(0);
 
   const previousButton = document.querySelector(".jobs .previous");
@@ -121,6 +129,7 @@ const experienceMarkup = `
       <div class="jobs-container"></div>
       <a class="controls next" href="#">⬅︎</a>
     </div>
+    <div class="page-counter"></div>
   </section>
 `;
 

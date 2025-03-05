@@ -32,7 +32,7 @@ const aboutMarkup = `
     </div>
     <div class="more-links">
       <div class="link">
-        <a href="https://github.com/daosgava" target="_blank">Explore Github <span class="external-icon">→<span class="external-icon"></a>
+        <a href="https://github.com/daosgava" target="_blank">Explore Github <span class="external-icon">→</span></a>
         <hr>
       </div>
       <div class="link">
