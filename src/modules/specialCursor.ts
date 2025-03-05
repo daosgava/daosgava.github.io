@@ -5,11 +5,11 @@ const initializeCursor = () => {
   const title = document.querySelector<HTMLElement>(".title");
 
   title!.addEventListener("mouseenter", () => {
-    cursor?.classList.remove("hidden");
+    cursor?.classList.remove("transparent");
   });
 
   title!.addEventListener("mouseout", () => {
-    cursor?.classList.add("hidden");
+    cursor?.classList.add("transparent");
   });
 
   title!.addEventListener("mousemove", (event) => {

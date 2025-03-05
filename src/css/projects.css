@@ -1,0 +1,11 @@
+#projects {
+    display: flex;
+    flex-direction: column;
+    padding-block: 5rem;
+
+    & .subtitle {
+        font-size: 4rem;
+        text-align: left;
+        width: 100%;
+    }
+}

@@ -1,7 +1,9 @@
 #experience {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     padding-block: 5rem;
+    height: 100vh;
 
     & .subtitle {
         font-size: 4rem;
@@ -10,67 +12,70 @@
     }
 
     & .jobs {
-        overflow-x: auto;
-        scroll-behavior: smooth;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
         width: 100%;
 
         & .jobs-container {
             display: flex;
             flex-direction: row;
+            justify-content: center;
             gap: 1rem;
             text-align: left;
-            width: max-content;
+            transition: opacity 200ms;
+            width: 100%;
 
-            & section {
-                border-right: .2rem solid;
+            & .vertical-line {
+                background: var(--text-color);
+                height: auto;
+                width: .2rem;
+            }
+
+            & .job {
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
-                height: max-content;
+                gap: 1rem;
+                max-width: 40rem;
+                min-height: 70vh;
                 padding: 2rem;
-                width: 48vw;
 
-                & .job {
+                & .logos-container {
                     display: flex;
                     flex-direction: column;
+                    height: 8rem;
                     gap: 1rem;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    align-items: center;
 
-                    & .logos-container {
+                    & .logo {
+                        align-items: center;
                         display: flex;
                         flex-direction: column;
-                        height: 8rem;
-                        gap: 1rem;
-                        flex-wrap: wrap;
                         justify-content: center;
-                        align-items: center;
+                        height: 3rem;
+                        width: 3rem;
 
-                        & .logo {
-                            align-items: center;
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: center;
-                            height: 3rem;
-                            width: 3rem;
-
-                            & img {
-                                filter: grayscale();
-                                height: 2rem;
-                                transition: all 200ms;
-                                width: 2rem;
-                            }
-
-                            & p {
-                                font-weight: 500;
-                            }
+                        & img {
+                            filter: grayscale();
+                            height: 2rem;
+                            transition: all 200ms;
+                            width: 2rem;
                         }
 
-                        & .logo:hover {
+                        & p {
+                            font-weight: 500;
+                        }
+                    }
 
-                            & img {
-                                filter: unset;
-                                height: 2.2rem;
-                                width: 2.2rem;
-                            }
+                    & .logo:hover {
+
+                        & img {
+                            filter: unset;
+                            height: 2.2rem;
+                            width: 2.2rem;
                         }
                     }
                 }
@@ -85,33 +90,33 @@
                     min-height: 10rem;
                     gap: 1rem;
                 }
-
-                & .controls {
-                    display: flex;
-                    justify-content: center;
-
-                    & a {
-                        border-radius: 4rem;
-                        display: flex;
-                        justify-content: center;
-                        font-size: 2rem;
-                        height: 3rem;
-                        text-decoration: none;
-                        transition: all 300ms;
-                        width: 3rem;
-                        z-index: 10;
-                    }
-
-                    & .next-job {
-                        transform: rotate(180deg);
-                    }
-
-                    & a:hover {
-                        background-color: var(--text-color);
-                        color: var(--bg-color);
-                    }
-                }
             }
         }
+
+
+        & .controls {
+            border-radius: 4rem;
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+            height: 3rem;
+            text-decoration: none;
+            transition: all 300ms;
+            width: 3.3rem;
+            z-index: 10;
+        }
+
+        & .next {
+            transform: rotate(180deg);
+        }
+
+        & a:hover {
+            background-color: var(--text-color);
+            color: var(--bg-color);
+        }
     }
+}
+
+.hidden {
+    display: none;
 }

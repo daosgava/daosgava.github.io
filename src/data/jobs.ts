@@ -110,7 +110,7 @@ const JOBS = [
       "Node.js",
       "GraphQL",
       "React.js",
-      "Apollo Server",
+      "Next.js",
     ],
   },
 ];

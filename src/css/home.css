@@ -23,6 +23,7 @@
     transition: opacity 0.3s ease-out;
 }
 
-.hidden {
+.transparent {
+    cursor: default;
     opacity: 0;
 }

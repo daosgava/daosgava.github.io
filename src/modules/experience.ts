@@ -1,22 +1,98 @@
 import { JOBS } from "../data/jobs";
 import { LOGOS } from "../modules/techoLogos";
+import { createState } from "../utils/stateManager";
 
-const nextButton = (index: number) => {
-  if (index < JOBS.length && index % 2 !== 0) {
-    console.log(Number(JOBS[index + 2] ? 2 : 1));
-    const nextIndex = index + Number(JOBS[index + 2] ? 2 : 1);
-    return `<a class="next-job" href="#experience-${nextIndex}">⬅︎</a>`;
-  }
-
-  return "";
+const renderJobs = (start: number, end: number) => {
+  const jobsContainer = document.querySelector(".jobs-container");
+  jobsContainer?.classList.add("transparent");
+  setTimeout(() => {
+    jobsContainer?.classList.remove("transparent");
+    const jobs = JOBS.slice(start, end)
+      .map(
+        (job, index) => `
+      <div class="job">
+        <div class="job-title">
+          <h2>${job.title} <small>at</small> <a href="${job.company.url}" target="_blank"><em>${job.company.name}</em></a></h2>
+          <em>${job.duration}</em>
+        </div>
+        <div class="description-container">
+          <p>${job.description}</p>
+          ${job.additional_info ? `<p><strong>${job.additional_info}</strong></p>` : ""}
+          <ul>
+            ${job.responsibilities.map((resp) => `<li>${resp}</li>`).join("")}
+          </ul>
+        </div>
+        <p><strong>Technologies:</strong> </p>
+        <div class="logos-container">${technologiesLogos(job.technologies)}</div>
+      </div>
+      ${index % 2 === 0 && end <= JOBS.length ? "<div class='vertical-line'></div>": ""}
+    `,
+      )
+      .join("");
+    jobsContainer!.innerHTML = jobs;
+  }, 200);
 };
 
-const previousButton = (index: number) => {
-  if (index > 0 && index % 2 === 0) {
-    return `<a class="previous-job" href="#experience-${index - 2}">⬅︎</a>`;
+const toggleControls = (currentIndex: number) => {
+  const previousButton = document.querySelector(".jobs .previous");
+  const nextButton = document.querySelector(".jobs .next");
+  nextButton?.classList.remove("transparent");
+  previousButton?.classList.remove("transparent");
+  const window = 2;
+
+  if(currentIndex + window >= JOBS.length) {
+    nextButton?.classList.add("transparent");
   }
 
-  return "";
+  if(currentIndex === 0) {
+    previousButton?.classList.add("transparent");
+  }
+};
+
+type HandleClickControlProps = {
+  indexState: {
+    getState: () => number,
+    setState: (newVal: number) => void;
+  };
+  operation: "next" | "previous";
+};
+
+const handleClickControl = ({ indexState, operation }: HandleClickControlProps) => {
+  const window = 2;
+  const value = indexState.getState();
+
+  if (operation === "next" && value + window >= JOBS.length) return;
+  if (operation === "previous" && value === 0) return;
+
+  const newIndex = operation === "next" ? value + window : value - window;
+  indexState.setState(newIndex);
+  renderJobs(newIndex, newIndex + window);
+  toggleControls(newIndex);
+};
+
+const initializeJobsCarousel = () => {
+  const { getState, setState } = createState(0);
+
+  renderJobs(0, 2);
+  toggleControls(0);
+
+  const previousButton = document.querySelector(".jobs .previous");
+  previousButton?.addEventListener("click", (e) => {
+    e.preventDefault();
+    handleClickControl({
+      indexState: { getState, setState },
+      operation: "previous",
+    });
+  });
+
+  const nextButton = document.querySelector(".jobs .next");
+  nextButton?.addEventListener("click", (e) => {
+    e.preventDefault();
+    handleClickControl({
+      indexState: { getState, setState },
+      operation: "next",
+    });
+  });
 };
 
 const technologiesLogos = (technologies: string[]) => {
@@ -24,7 +100,7 @@ const technologiesLogos = (technologies: string[]) => {
     .map((techName) => {
       const logo = LOGOS.find((logo) => logo.name === techName);
 
-      return (`
+      return `
         <div class="logo">
           ${
             logo?.name
@@ -32,7 +108,7 @@ const technologiesLogos = (technologies: string[]) => {
               : ""
           } <p>${techName}</p>
         </div>
-      `);
+      `;
     })
     .join("");
 };
@@ -41,35 +117,11 @@ const experienceMarkup = `
   <section id="experience" class="section-container">
     <h2 class="subtitle">Experience<hr></h2>
     <div class="jobs">
-      <div class="jobs-container">
-        ${JOBS.map(
-          (job, index) => `
-          <section id="experience-${index}">
-            <div class="job">
-              <div class="job-title">
-                <h2>${job.title} <small>at</small> <a href="${job.company.url}" target="_blank"><em>${job.company.name}</em></a></h2>
-                <em>${job.duration}</em>
-              </div>
-              <div class="description-container">
-                <p>${job.description}</p>
-                ${job.additional_info ? `<p><strong>${job.additional_info}</strong></p>` : ""}
-                <ul>
-                  ${job.responsibilities.map((resp) => `<li>${resp}</li>`).join("")}
-                </ul>
-              </div>
-              <p><strong>Technologies:</strong> </p>
-              <div class="logos-container">${technologiesLogos(job.technologies)}</div>
-            </div>
-            <div class="controls">
-              ${nextButton(Number(index))}
-              ${previousButton(Number(index))}
-            </div>
-          </section>
-          `,
-        ).join("")}
-      </div>
+      <a class="controls previous" href="#">⬅︎</a>
+      <div class="jobs-container"></div>
+      <a class="controls next" href="#">⬅︎</a>
     </div>
   </section>
 `;
 
-export { experienceMarkup };
+export { experienceMarkup, initializeJobsCarousel };
