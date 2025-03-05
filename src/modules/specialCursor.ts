@@ -1,4 +1,4 @@
-const specialCursorMarkup = `<div class="cursor hidden"></div>`;
+const specialCursorMarkup = `<div class="cursor transparent"></div>`;
 
 const initializeCursor = () => {
   const cursor = document.querySelector<HTMLElement>(".cursor");
