@@ -117,7 +117,8 @@
 
     & .page-counter {
         display: flex;
-        justify-content: flex-end;
+        font-weight: 500;
+        justify-content: center;
         width: 100%;
     }
 }
