@@ -28,7 +28,3 @@
         transition: all 200ms;
     }
 }
-
-.blur {
-    filter: blur(0.15rem);
-}

@@ -1,6 +1,7 @@
 import "./css/reset.css";
 import "./css/defaults.css";
 import "./css/global.css";
+import "./css/header.css";
 import "./css/modeSwitch.css";
 import "./css/menu.css";
 import "./css/home.css";
@@ -9,7 +10,6 @@ import "./css/experience.css";
 import "./css/projects.css";
 import "./css/footer.css";
 import "./css/contact.css";
-import "./css/media.css";
 
 import { initializeSwitchMode } from "./modules/modeSwitch";
 import { initializeCursor } from "./modules/specialCursor";
