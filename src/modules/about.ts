@@ -26,7 +26,12 @@ const aboutMarkup = `
     </p>
     <div class="tech-stack">
       <div class="tech-logos">
-        ${LOGOS.slice(0, 11).map((logo) => `<div class="logo"><img src="${logo.url}" alt="${logo.name}"/><p>${logo.name}</p></div>`).join(" ")}
+        ${LOGOS.slice(0, 11)
+          .map(
+            (logo) =>
+              `<div class="logo"><img src="${logo.url}" alt="${logo.name}"/><p>${logo.name}</p></div>`,
+          )
+          .join(" ")}
         <em>...among others</em>
       </div>
     </div>

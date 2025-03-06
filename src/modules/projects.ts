@@ -77,9 +77,9 @@ const handleClickLink = (e: Event) => {
   const projectContainer = document.querySelector(".project-container");
   projectContainer?.classList.add("transparent");
   setTimeout(() => {
-    renderProject(projectSelected!)
+    renderProject(projectSelected!);
     projectContainer?.classList.remove("transparent");
-  }, 200)
+  }, 200);
 };
 
 const initializeProjectLinks = () => {

@@ -1,0 +1,17 @@
+@media (max-width: $small) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: $medium) {
+    .container {
+        padding: 10px;
+    }
+}
+
+@media (min-width: $large) {
+    .desktop-only {
+        display: block;
+    }
+}

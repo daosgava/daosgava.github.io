@@ -8,7 +8,8 @@ import "./css/about.css";
 import "./css/experience.css";
 import "./css/projects.css";
 import "./css/footer.css";
-import "./css/contact.css"
+import "./css/contact.css";
+import "./css/media.css";
 
 import { initializeSwitchMode } from "./modules/modeSwitch";
 import { initializeCursor } from "./modules/specialCursor";

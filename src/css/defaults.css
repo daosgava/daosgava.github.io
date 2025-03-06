@@ -4,6 +4,10 @@
     --bg-color: var(--light-color);
     --text-color: var(--dark-color);
 
+    --small-screen: 480px;
+    --medium-screen: 768px;
+    --large-screen: 1024px;
+
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;

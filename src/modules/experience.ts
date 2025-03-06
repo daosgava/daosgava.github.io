@@ -5,7 +5,7 @@ import { createState } from "../utils/stateManager";
 const window = 2;
 
 const renderPageCounter = (current: number) => {
-  const numOfPages = Math.ceil(JOBS.length / window)
+  const numOfPages = Math.ceil(JOBS.length / window);
   const currentPage = Math.floor((current / JOBS.length) * numOfPages);
   const pageCounter = document.querySelector(".page-counter");
   pageCounter!.innerHTML = `${currentPage} of ${numOfPages}`;
@@ -49,24 +49,27 @@ const toggleControls = (currentIndex: number) => {
   nextButton?.classList.remove("transparent");
   previousButton?.classList.remove("transparent");
 
-  if(currentIndex + window >= JOBS.length) {
+  if (currentIndex + window >= JOBS.length) {
     nextButton?.classList.add("transparent");
   }
 
-  if(currentIndex === 0) {
+  if (currentIndex === 0) {
     previousButton?.classList.add("transparent");
   }
 };
 
 type HandleClickControlProps = {
   indexState: {
-    getState: () => number,
+    getState: () => number;
     setState: (newVal: number) => void;
   };
   operation: "next" | "previous";
 };
 
-const handleClickControl = ({ indexState, operation }: HandleClickControlProps) => {
+const handleClickControl = ({
+  indexState,
+  operation,
+}: HandleClickControlProps) => {
   const value = indexState.getState();
 
   if (operation === "next" && value + window >= JOBS.length) return;
