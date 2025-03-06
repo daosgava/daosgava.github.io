@@ -138,4 +138,18 @@
             display: none;
         }
     }
+
+    @media only screen and (max-width: 992px) {
+        & .jobs {
+            & .jobs-container {
+                & .job {
+                    padding: 1rem;
+                }
+            }
+
+            & .controls {
+                width: 3.7rem;
+            }
+        }
+    }
 }
