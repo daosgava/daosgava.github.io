@@ -1,5 +1,4 @@
 footer {
-    border-top: .2rem solid var(--text-color);
     display: flex;
     flex-direction: row;
     font-weight: 500;

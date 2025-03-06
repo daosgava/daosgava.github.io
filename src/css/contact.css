@@ -1,4 +1,5 @@
 #contact {
+    border-top: .2rem solid var(--text-color);
     display: flex;
     flex-direction: row;
     justify-content: space-between;

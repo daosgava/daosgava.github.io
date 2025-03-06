@@ -1,3 +1,13 @@
+@keyframes lighteffect {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes moveforward {
+    from { transform: translateX(0) rotate(180deg); }
+    to { transform: translateX(1rem) rotate(180deg); }
+}
+
 #projects {
     display: flex;
     flex-direction: column;
@@ -10,6 +20,11 @@
     }
 
     & .projects-content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
         & ul {
             display: flex;
             flex-direction: row;
@@ -34,6 +49,73 @@
             & li:hover {
                 & hr {
                     width: 100%;
+                }
+            }
+
+            & .selected {
+                & hr {
+                    width: 100%;
+                }
+            }
+        }
+
+        & .project-container {
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 2rem;
+            overflow: hidden;
+            text-align: left;
+
+            & .images {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                max-width: 50rem;
+
+                & .images-container {
+                    border: .2rem solid var(--text-color);
+                    border-radius: .5rem;
+                    display: flex;
+                    flex-direction: row;
+                    overflow-x: scroll;
+                    scroll-behavior: smooth;
+                    gap: 1rem;
+                }
+
+                & .scroll-sign-container {
+                    min-height: 3rem;
+
+                    & .hidden {
+                        display: none;
+                    }
+
+                    & p {
+                        animation: lighteffect 1s linear infinite alternate;
+                        display: flex;
+                        flex-direction: row;
+                        font-style: italic;
+                        font-weight: 600;
+                        gap: .5rem;
+
+                        & .arrow {
+                            animation: moveforward 1s linear infinite alternate;
+                            display: flex;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+
+            & .details {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem;
+
+                & a {
+                    width: fit-content;
                 }
             }
         }

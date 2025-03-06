@@ -1,12 +1,78 @@
 import { PROJECTS } from "../data/projects";
 
+type Project = {
+  id: number;
+  name: string;
+  description: string;
+  images: string[];
+  url: string | null;
+  github: string | null;
+};
+
+const highlightLink = (projectId: number) => {
+  const link = document.querySelector(`#project-${projectId}`);
+  const links = document.querySelectorAll(".menu ul li");
+  links.forEach((link) => link.classList.remove("selected"));
+  link?.classList.add("selected");
+};
+
+const imagesScrollingDetector = () => {
+  const imagesContainer =
+    document.querySelector<HTMLElement>(".images-container");
+  const scrollSign = document.querySelector<HTMLElement>(".scroll-sign");
+
+  scrollSign?.addEventListener("click", (e) => {
+    e.preventDefault();
+    imagesContainer?.scrollTo(imagesContainer.scrollWidth, 0);
+  });
+
+  imagesContainer?.addEventListener("scrollend", (e) => {
+    const target = e.target as HTMLElement;
+    const window = 200;
+    if (
+      target.scrollLeft + window >=
+      imagesContainer.getBoundingClientRect().width
+    ) {
+      scrollSign!.classList.add("hidden");
+      return;
+    }
+    scrollSign!.classList.remove("hidden");
+  });
+};
+
+const renderProject = (project: Project) => {
+  const projectContainer = document.querySelector(".project-container");
+  const markup = `
+    <div class="details">
+      <h3>${project.name}</h3>
+      <p>${project.description}</p>
+      <a href="${project.url || project.github}" target="_blank">${project.url ? "Visit Page" : "Github"}<hr></a>
+    </div>
+    <div class="images">
+      <div class="images-container">
+        ${project.images.map((url) => `<img src="${url}" />`).join("")}
+      </div>
+      <div class="scroll-sign-container">
+        ${project.images.length > 1 ? `<p class="scroll-sign">Scroll <span class="arrow">⬅︎</span></p>` : ""}
+      </div>
+    </div>
+  `;
+
+  projectContainer!.innerHTML = markup;
+  highlightLink(project.id);
+  if (project.images.length > 1) {
+    imagesScrollingDetector();
+  }
+};
+
 const handleClickLink = (e: Event) => {
   e.preventDefault();
   const link = e.target as HTMLElement;
-  const clickedProject = link.getAttribute("data-project-name");
-  const projectSelected = PROJECTS.find((project) => project.name === clickedProject);
-
-
+  const clickedProject = link.getAttribute("data-project-id");
+  const projectSelected = PROJECTS.find(
+    (project) => project.id === Number(clickedProject),
+  );
+  renderProject(projectSelected!);
 };
 
 const initializeProjectLinks = () => {
@@ -15,6 +81,7 @@ const initializeProjectLinks = () => {
 };
 
 const initializeProjects = () => {
+  renderProject(PROJECTS[0]);
   initializeProjectLinks();
 };
 
@@ -26,12 +93,12 @@ const projectMarkup = `
         <ul>
           ${PROJECTS.map(
             (project) => `
-              <li><a href="#" class="project-link" data-project-name="${project.name}">${project.name}</a> <hr></li>
+              <li id="project-${project.id}"><a href="#" class="project-link" data-project-id="${project.id}">${project.name}</a> <hr></li>
               `,
           ).join("")}
         </ul>
      </div>
-     <div class="project">
+     <div class="project-container">
 
      <div>
     </div>
