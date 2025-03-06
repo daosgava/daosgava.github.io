@@ -2,13 +2,52 @@ import { JOBS } from "../data/jobs";
 import { LOGOS } from "../modules/techoLogos";
 import { createState } from "../utils/stateManager";
 
-const isSmallScreen = window.matchMedia(
-  "only screen and (max-width: 992px)",
-).matches;
-const windowSpan = isSmallScreen ? 1 : 2;
+type IndexState = {
+  getState: () => number;
+  setState: (newVal: number) => void;
+};
+
+type HandleClickControlProps = {
+  indexState: IndexState;
+  operation: "next" | "previous";
+};
+
+const itemsPerSlide = createState(0);
+
+const setItemsPerSlide = (indexState: IndexState) => {
+  const querySmallScreen = window.matchMedia(
+    "only screen and (max-width: 992px)",
+  );
+  const isSmallScreen = querySmallScreen.matches;
+  itemsPerSlide.setState(isSmallScreen ? 1 : 2);
+  querySmallScreen.addEventListener("change", (e: MediaQueryListEvent) => {
+    const newSpan = e.matches ? 1 : 2;
+    itemsPerSlide.setState(newSpan);
+    const currentIndex = indexState.getState();
+    renderJobs(currentIndex, currentIndex + newSpan)
+  });
+};
+
+const technologiesLogos = (technologies: string[]) => {
+  return technologies
+    .map((techName) => {
+      const logo = LOGOS.find((logo) => logo.name === techName);
+
+      return `
+        <div class="logo">
+          ${
+            logo?.name
+              ? `<img class= "logo" src = "${logo?.url}" alt = "${logo?.name}" /> `
+              : ""
+          } <p>${techName}</p>
+        </div>
+      `;
+    })
+    .join("");
+};
 
 const renderPageCounter = (current: number) => {
-  const numOfPages = Math.ceil(JOBS.length / windowSpan);
+  const numOfPages = Math.ceil(JOBS.length / itemsPerSlide.getState());
   const currentPage = Math.floor((current / JOBS.length) * numOfPages);
   const pageCounter = document.querySelector(".page-counter");
   pageCounter!.innerHTML = `${currentPage} of ${numOfPages}`;
@@ -52,7 +91,7 @@ const toggleControls = (currentIndex: number) => {
   nextButton?.classList.remove("transparent");
   previousButton?.classList.remove("transparent");
 
-  if (currentIndex + windowSpan >= JOBS.length) {
+  if (currentIndex + itemsPerSlide.getState() >= JOBS.length) {
     nextButton?.classList.add("transparent");
   }
 
@@ -61,41 +100,37 @@ const toggleControls = (currentIndex: number) => {
   }
 };
 
-type HandleClickControlProps = {
-  indexState: {
-    getState: () => number;
-    setState: (newVal: number) => void;
-  };
-  operation: "next" | "previous";
-};
-
 const handleClickControl = ({
   indexState,
   operation,
 }: HandleClickControlProps) => {
   const value = indexState.getState();
 
-  if (operation === "next" && value + windowSpan >= JOBS.length) return;
+  if (operation === "next" && value + itemsPerSlide.getState() >= JOBS.length)
+    return;
   if (operation === "previous" && value === 0) return;
 
   const newIndex =
-    operation === "next" ? value + windowSpan : value - windowSpan;
+    operation === "next"
+      ? value + itemsPerSlide.getState()
+      : value - itemsPerSlide.getState();
   indexState.setState(newIndex);
-  renderJobs(newIndex, newIndex + windowSpan);
+  renderJobs(newIndex, newIndex + itemsPerSlide.getState());
   toggleControls(newIndex);
 };
 
 const initializeJobsCarousel = () => {
-  const { getState, setState } = createState(0);
+  const indexState = createState(0);
 
-  renderJobs(0, windowSpan);
+  setItemsPerSlide(indexState);
+  renderJobs(0, itemsPerSlide.getState());
   toggleControls(0);
 
   const previousButton = document.querySelector(".jobs .previous");
   previousButton?.addEventListener("click", (e) => {
     e.preventDefault();
     handleClickControl({
-      indexState: { getState, setState },
+      indexState,
       operation: "previous",
     });
   });
@@ -104,28 +139,10 @@ const initializeJobsCarousel = () => {
   nextButton?.addEventListener("click", (e) => {
     e.preventDefault();
     handleClickControl({
-      indexState: { getState, setState },
+      indexState,
       operation: "next",
     });
   });
-};
-
-const technologiesLogos = (technologies: string[]) => {
-  return technologies
-    .map((techName) => {
-      const logo = LOGOS.find((logo) => logo.name === techName);
-
-      return `
-        <div class="logo">
-          ${
-            logo?.name
-              ? `<img class= "logo" src = "${logo?.url}" alt = "${logo?.name}" /> `
-              : ""
-          } <p>${techName}</p>
-        </div>
-      `;
-    })
-    .join("");
 };
 
 const experienceMarkup = `
