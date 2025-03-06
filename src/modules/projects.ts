@@ -12,7 +12,7 @@ type Project = {
 
 const highlightLink = (projectId: number) => {
   const link = document.querySelector(`#project-${projectId}`);
-  const links = document.querySelectorAll(".menu ul li");
+  const links = document.querySelectorAll(".projects-menu ul li");
   links.forEach((link) => link.classList.remove("selected"));
   link?.classList.add("selected");
 };
@@ -96,7 +96,7 @@ const projectMarkup = `
   <section id="projects" class="section-container">
     <h2 class="subtitle">Projects<hr></h2>
     <div class="projects-content">
-      <div class="menu">
+      <div class="projects-menu">
         <ul>
           ${PROJECTS.map(
             (project) => `
