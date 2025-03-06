@@ -7,6 +7,7 @@ type Project = {
   images: string[];
   url: string | null;
   github: string | null;
+  technologies: string[];
 };
 
 const highlightLink = (projectId: number) => {
@@ -46,6 +47,7 @@ const renderProject = (project: Project) => {
     <div class="details">
       <h3>${project.name}</h3>
       <p>${project.description}</p>
+      <Strong><em>Tech Stack: ${project.technologies.join(" | ")}</em></strong>
       <a href="${project.url || project.github}" target="_blank">${project.url ? "Visit Page" : "Github"}<hr></a>
     </div>
     <div class="images">

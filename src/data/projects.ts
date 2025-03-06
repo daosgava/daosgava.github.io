@@ -11,6 +11,7 @@ const PROJECTS = [
     images: [fuzzySearch, councilsTools],
     url: "https://opticity.com.au",
     github: null,
+    technologies: ["TypeScript", "React.js", "Tailwind CSS", "Node.js"],
   },
   {
     id: 2,
@@ -19,6 +20,7 @@ const PROJECTS = [
     images: [mapBoxMapillary],
     url: null,
     github: "https://github.com/daosgava/poc-mapbox-mapillary-integration",
+    technologies: ["Javascript", "Node.js", "Mapbox API", "Mapillary API"],
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const PROJECTS = [
     images: [csharpCompiler],
     url: null,
     github: "https://github.com/daosgava/csharp-wasm-compiler",
+    technologies: ["C#", "JavaScript", "Node.js", "WebAssembly"],
   },
 ];
 

@@ -33,7 +33,7 @@ const renderJobs = (start: number, end: number) => {
             ${job.responsibilities.map((resp) => `<li>${resp}</li>`).join("")}
           </ul>
         </div>
-        <p><strong>Technologies:</strong> </p>
+        <p><strong>Technology Stack:</strong> </p>
         <div class="logos-container">${technologiesLogos(job.technologies)}</div>
       </div>
     `,
