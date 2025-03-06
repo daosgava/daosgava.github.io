@@ -53,7 +53,7 @@ const renderProject = (project: Project) => {
         ${project.images.map((url) => `<img src="${url}" />`).join("")}
       </div>
       <div class="scroll-sign-container">
-        ${project.images.length > 1 ? `<p class="scroll-sign">Scroll <span class="arrow">⬅︎</span></p>` : ""}
+        ${project.images.length > 1 ? `<a class="scroll-sign">Scroll <span class="arrow">⬅︎</span></a>` : ""}
       </div>
     </div>
   `;
@@ -72,7 +72,12 @@ const handleClickLink = (e: Event) => {
   const projectSelected = PROJECTS.find(
     (project) => project.id === Number(clickedProject),
   );
-  renderProject(projectSelected!);
+  const projectContainer = document.querySelector(".project-container");
+  projectContainer?.classList.add("transparent");
+  setTimeout(() => {
+    renderProject(projectSelected!)
+    projectContainer?.classList.remove("transparent");
+  }, 200)
 };
 
 const initializeProjectLinks = () => {
@@ -98,9 +103,7 @@ const projectMarkup = `
           ).join("")}
         </ul>
      </div>
-     <div class="project-container">
-
-     <div>
+     <div class="project-container"><div>
     </div>
   </section>
 `;
