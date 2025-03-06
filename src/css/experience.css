@@ -131,7 +131,6 @@
 
 @media only screen and (max-width: 768px) {
     #experience {
-        padding: 0;
         height: 100%;
 
         & .about-content {
@@ -155,11 +154,12 @@
 }
 
 @media only screen and (max-width: 992px) {
-    experience {
+    #experience {
         & .jobs {
             & .jobs-container {
                 & .job {
                     padding: 1rem;
+                    min-height: auto;
                 }
             }
 
