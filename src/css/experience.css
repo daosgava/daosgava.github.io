@@ -110,7 +110,7 @@
             & hr {
                 display: flex;
                 transition: width 300ms;
-                width: .7rem;
+                width: 0.7rem;
             }
 
             & .control:hover {
@@ -127,8 +127,13 @@
         justify-content: center;
         width: 100%;
     }
+}
 
-    @media only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
+    #experience {
+        padding: 0;
+        height: 100%;
+
         & .about-content {
             flex-direction: column;
             gap: 1rem;
@@ -147,8 +152,10 @@
             display: none;
         }
     }
+}
 
-    @media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
+    experience {
         & .jobs {
             & .jobs-container {
                 & .job {

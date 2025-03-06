@@ -137,15 +137,17 @@
     #projects {
         height: 100%;
         & .projects-content {
+            gap: 1rem;
+            width: 100%;
             & .projects-menu {
                 padding: 0;
+                & ul {
+                    gap: 0.5rem;
+                }
             }
             & .project-container {
                 flex-direction: column;
                 gap: 1rem;
-                & .details {
-                    padding: 1rem 0 0 0;
-                }
                 & .images {
                     & .images-container {
                         width: 100%;

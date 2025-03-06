@@ -35,6 +35,10 @@
         gap: .5rem;
         padding: 0;
 
+        & .logo {
+            display: none;
+        }
+
         & .menu-item {
             padding: .3rem;
         }

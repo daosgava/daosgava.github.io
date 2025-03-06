@@ -4,7 +4,7 @@ import logo from "../images/logo.png";
 const menuMarkup = `
   <nav class="menu">
     <a class="menu-item logo" href="#home"><img src="${logo}" alt="Daniel Garcia - Software Developer"/></a>
-    <a class="menu-item" href="#about">About Me</a>
+    <a class="menu-item" href="#about">About</a>
     <a class="menu-item" href="#experience">Experience</a>
     <a class="menu-item" href="#projects">Projects</a>
     <a class="menu-item" href="#contact">Contact</a>
@@ -28,6 +28,12 @@ const initializeMenuItems = () => {
         item.classList.remove("blur");
       });
     });
+
+    item.addEventListener("click", () => {
+      menuItems.forEach((item: Element) => {
+        item.classList.remove("blur");
+      });
+    })
   });
 };
 
