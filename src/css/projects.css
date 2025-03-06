@@ -69,6 +69,7 @@
             overflow: hidden;
             text-align: left;
             transition: opacity 200ms;
+            max-width: 200rem;
 
             & .images {
                 align-items: center;
