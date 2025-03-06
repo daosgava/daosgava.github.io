@@ -2,10 +2,13 @@ import { JOBS } from "../data/jobs";
 import { LOGOS } from "../modules/techoLogos";
 import { createState } from "../utils/stateManager";
 
-const window = 2;
+const isSmallScreen = window.matchMedia(
+  "only screen and (max-width: 992px)",
+).matches;
+const windowSpan = isSmallScreen ? 1 : 2;
 
 const renderPageCounter = (current: number) => {
-  const numOfPages = Math.ceil(JOBS.length / window);
+  const numOfPages = Math.ceil(JOBS.length / windowSpan);
   const currentPage = Math.floor((current / JOBS.length) * numOfPages);
   const pageCounter = document.querySelector(".page-counter");
   pageCounter!.innerHTML = `${currentPage} of ${numOfPages}`;
@@ -49,7 +52,7 @@ const toggleControls = (currentIndex: number) => {
   nextButton?.classList.remove("transparent");
   previousButton?.classList.remove("transparent");
 
-  if (currentIndex + window >= JOBS.length) {
+  if (currentIndex + windowSpan >= JOBS.length) {
     nextButton?.classList.add("transparent");
   }
 
@@ -72,19 +75,20 @@ const handleClickControl = ({
 }: HandleClickControlProps) => {
   const value = indexState.getState();
 
-  if (operation === "next" && value + window >= JOBS.length) return;
+  if (operation === "next" && value + windowSpan >= JOBS.length) return;
   if (operation === "previous" && value === 0) return;
 
-  const newIndex = operation === "next" ? value + window : value - window;
+  const newIndex =
+    operation === "next" ? value + windowSpan : value - windowSpan;
   indexState.setState(newIndex);
-  renderJobs(newIndex, newIndex + window);
+  renderJobs(newIndex, newIndex + windowSpan);
   toggleControls(newIndex);
 };
 
 const initializeJobsCarousel = () => {
   const { getState, setState } = createState(0);
 
-  renderJobs(0, window);
+  renderJobs(0, windowSpan);
   toggleControls(0);
 
   const previousButton = document.querySelector(".jobs .previous");
