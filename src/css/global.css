@@ -15,8 +15,21 @@
     text-align: center;
 }
 
+.subtitle {
+    font-size: 4rem;
+    font-weight: 300;
+    font-style: italic;
+    text-align: left;
+    width: 100%;
+}
+
 .blur {
     filter: blur(0.15rem);
+}
+
+.transparent {
+    cursor: default;
+    opacity: 0;
 }
 
 @media only screen and (max-width: 768px) {

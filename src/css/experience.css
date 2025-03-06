@@ -5,12 +5,6 @@
     padding-block: 5rem;
     height: 100vh;
 
-    & .subtitle {
-        font-size: 4rem;
-        text-align: left;
-        width: 100%;
-    }
-
     & .jobs {
         display: flex;
         flex-direction: row;

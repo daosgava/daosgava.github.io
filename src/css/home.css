@@ -10,6 +10,8 @@
         font-size: 1.5rem;
         font-weight: 300;
         letter-spacing: 1rem;
+        text-align: center;
+        width: 100%;
     }
 
     .cursor {
@@ -22,11 +24,6 @@
         mix-blend-mode: difference;
         transform: translate(-50%, -50%);
         transition: opacity 0.3s ease-out;
-    }
-
-    .transparent {
-        cursor: default;
-        opacity: 0;
     }
 
     @media only screen and (max-width: 1200px) {
