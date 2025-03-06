@@ -31,19 +31,17 @@
     @media only screen and (max-width: 1200px) {
         & .title {
             letter-spacing: 1rem;
-            font-size: 3rem;
+            font-size: 4rem;
         }
     }
 
     @media only screen and (max-width: 768px) {
         & .title {
-            letter-spacing: 1rem;
-            font-size: 2rem;
+            letter-spacing: 0.5rem;
+            font-size: 3rem;
         }
 
         & .subtitle {
-            font-size: 1rem;
-            font-weight: 500;
             letter-spacing: 0.5rem;
         }
     }

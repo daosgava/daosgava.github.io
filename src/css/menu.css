@@ -5,8 +5,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1rem;
-    width: 30rem;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
 
     & .logo {
         transition: all 200ms;
@@ -25,6 +25,18 @@
     }
 
     & .menu-item {
+        padding: .5rem;
         transition: all 200ms;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .menu {
+        gap: .5rem;
+        padding: 0;
+
+        & .menu-item {
+            padding: .3rem;
+        }
     }
 }

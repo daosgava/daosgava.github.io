@@ -90,25 +90,34 @@
             }
         }
 
-        & .controls {
-            border-radius: 4rem;
+        & .control-container {
+            align-items: center;
             display: flex;
-            justify-content: center;
-            font-size: 2rem;
-            height: 3rem;
-            text-decoration: none;
-            transition: all 300ms;
-            width: 3.3rem;
-            z-index: 10;
-        }
+            height: 100%;
 
-        & .next {
-            transform: rotate(180deg);
-        }
+            & .control {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                font-size: 3rem;
+                font-weight: 900;
+                line-height: 3rem;
+                text-decoration: none;
+                width: 1.5rem;
+                z-index: 10;
+            }
 
-        & a:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
+            & hr {
+                display: flex;
+                transition: width 300ms;
+                width: .7rem;
+            }
+
+            & .control:hover {
+                & hr {
+                    width: 100%;
+                }
+            }
         }
     }
 

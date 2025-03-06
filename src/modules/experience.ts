@@ -149,9 +149,13 @@ const experienceMarkup = `
   <section id="experience" class="section-container">
     <h2 class="subtitle">Experience<hr></h2>
     <div class="jobs">
-      <a class="controls previous" href="#">⬅︎</a>
+      <div class="control-container">
+        <a class="control previous" href="#">❮<hr></a>
+      </div>
       <div class="jobs-container"></div>
-      <a class="controls next" href="#">⬅︎</a>
+      <div class="control-container">
+        <a class="control next" href="#">❯<hr></a>
+      </div>
     </div>
     <div class="page-counter"></div>
   </section>

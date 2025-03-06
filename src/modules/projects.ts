@@ -55,7 +55,7 @@ const renderProject = (project: Project) => {
         ${project.images.map((url) => `<img src="${url}" />`).join("")}
       </div>
       <div class="scroll-sign-container">
-        ${project.images.length > 1 ? `<a class="scroll-sign">Scroll <span class="arrow">⬅︎</span></a>` : ""}
+        ${project.images.length > 1 ? `<a class="scroll-sign">Scroll <span class="arrow">❯</span></a>` : ""}
       </div>
     </div>
   `;
@@ -104,8 +104,8 @@ const projectMarkup = `
               `,
           ).join("")}
         </ul>
-     </div>
-     <div class="project-container"><div>
+      </div>
+      <div class="project-container"><div>
     </div>
   </section>
 `;

@@ -9,17 +9,17 @@
 
 @keyframes moveforward {
     from {
-        transform: translateX(0) rotate(180deg);
+        transform: translateX(0);
     }
     to {
-        transform: translateX(1rem) rotate(180deg);
+        transform: translateX(1rem);
     }
 }
 
 #projects {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     padding-block: 5rem;
 
     & .projects-content {
@@ -89,9 +89,10 @@
                     border-radius: 0.5rem;
                     display: flex;
                     flex-direction: row;
+                    gap: 1rem;
                     overflow-x: scroll;
                     scroll-behavior: smooth;
-                    gap: 1rem;
+                    width: 50rem;
                 }
 
                 & .scroll-sign-container {
@@ -144,6 +145,11 @@
                 gap: 1rem;
                 & .details {
                     padding: 1rem 0 0 0;
+                }
+                & .images {
+                    & .images-container {
+                        width: 100%;
+                    }
                 }
             }
         }
