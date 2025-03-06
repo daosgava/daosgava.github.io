@@ -1,11 +1,19 @@
 @keyframes lighteffect {
-    from { opacity: 1; }
-    to { opacity: 0; }
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }
 
 @keyframes moveforward {
-    from { transform: translateX(0) rotate(180deg); }
-    to { transform: translateX(1rem) rotate(180deg); }
+    from {
+        transform: translateX(0) rotate(180deg);
+    }
+    to {
+        transform: translateX(1rem) rotate(180deg);
+    }
 }
 
 #projects {
@@ -77,8 +85,8 @@
                 max-width: 50rem;
 
                 & .images-container {
-                    border: .2rem solid var(--text-color);
-                    border-radius: .5rem;
+                    border: 0.2rem solid var(--text-color);
+                    border-radius: 0.5rem;
                     display: flex;
                     flex-direction: row;
                     overflow-x: scroll;
@@ -95,7 +103,7 @@
                         flex-direction: row;
                         font-style: italic;
                         font-weight: 600;
-                        gap: .5rem;
+                        gap: 0.5rem;
 
                         & .arrow {
                             animation: moveforward 1s linear infinite alternate;
@@ -122,10 +130,12 @@
             }
         }
     }
+}
 
-    @media only screen and (max-width: 992px) {
+@media only screen and (max-width: 992px) {
+    #projects {
+        height: 100%;
         & .projects-content {
-            gap: 0;
             & .projects-menu {
                 padding: 0;
             }
@@ -134,7 +144,6 @@
                 gap: 1rem;
                 & .details {
                     padding: 1rem 0 0 0;
-                    gap: .5rem;
                 }
             }
         }

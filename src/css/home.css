@@ -1,4 +1,6 @@
 #home {
+    height: 100vh;
+
     .title {
         font-style: italic;
         letter-spacing: 3rem;
@@ -42,7 +44,7 @@
         & .subtitle {
             font-size: 1rem;
             font-weight: 500;
-            letter-spacing: .5rem;
+            letter-spacing: 0.5rem;
         }
     }
 }

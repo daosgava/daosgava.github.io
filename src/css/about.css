@@ -107,6 +107,7 @@
         & .about-content {
             flex-direction: column;
             gap: 1rem;
+            padding: 1rem;
 
             & .highlight {
                 font-size: 2rem;

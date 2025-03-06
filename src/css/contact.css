@@ -16,3 +16,21 @@
         font-size: 4rem;
     }
 }
+
+@media only screen and (max-width: 992px) {
+    #contact {
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        height: 50vh;
+
+        & .subtitle {
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        & .email {
+            font-size: 2rem;
+        }
+    }
+}
