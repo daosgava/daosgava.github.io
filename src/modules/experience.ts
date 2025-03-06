@@ -14,17 +14,17 @@ type HandleClickControlProps = {
 
 const itemsPerSlide = createState(0);
 
-const setItemsPerSlide = (indexState: IndexState) => {
+const setItemsPerSlide = () => {
   const querySmallScreen = window.matchMedia(
     "only screen and (max-width: 992px)",
   );
   const isSmallScreen = querySmallScreen.matches;
   itemsPerSlide.setState(isSmallScreen ? 1 : 2);
+
   querySmallScreen.addEventListener("change", (e: MediaQueryListEvent) => {
     const newSpan = e.matches ? 1 : 2;
     itemsPerSlide.setState(newSpan);
-    const currentIndex = indexState.getState();
-    renderJobs(currentIndex, currentIndex + newSpan)
+    initializeJobsCarousel();
   });
 };
 
@@ -122,7 +122,7 @@ const handleClickControl = ({
 const initializeJobsCarousel = () => {
   const indexState = createState(0);
 
-  setItemsPerSlide(indexState);
+  setItemsPerSlide();
   renderJobs(0, itemsPerSlide.getState());
   toggleControls(0);
 
