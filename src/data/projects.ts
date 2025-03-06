@@ -7,14 +7,14 @@ const PROJECTS = [
     github: "",
   },
   {
-    name: "Interactive Street View & Map Navigation",
+    name: "Map & Street View",
     description: "",
     images: [],
     url: "",
     github: "",
   },
   {
-    name: "C# WebAssembly Compiler: A Browser-Based Solution",
+    name: "C# Compiler & WebAssembly",
     description: "",
     images: [],
     url: "",

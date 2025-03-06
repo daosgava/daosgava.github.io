@@ -1,6 +1,6 @@
 import "./css/reset.css";
 import "./css/defaults.css";
-import "./css/style.css";
+import "./css/global.css";
 import "./css/modeSwitch.css";
 import "./css/menu.css";
 import "./css/home.css";
@@ -18,7 +18,7 @@ import { homeMarkup } from "./modules/home";
 import { headerMarkup } from "./modules/header";
 import { aboutMarkup } from "./modules/about";
 import { experienceMarkup, initializeJobsCarousel } from "./modules/experience";
-import { projectMarkup } from "./modules/projects";
+import { initializeProjects, projectMarkup } from "./modules/projects";
 import { contactMarkup } from "./modules/contact";
 import { footerMarkup } from "./modules/footer";
 
@@ -45,6 +45,7 @@ const initializePage = () => {
   initializeMenuItems();
   initializeCursor();
   initializeJobsCarousel();
+  initializeProjects();
 };
 
 initializePage();

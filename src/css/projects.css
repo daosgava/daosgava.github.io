@@ -8,4 +8,34 @@
         text-align: left;
         width: 100%;
     }
+
+    & .projects-content {
+        & ul {
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+
+            & li {
+                align-items: start;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                font-weight: 500;
+                list-style: none;
+                text-align: left;
+                width: 7rem;
+
+                & hr {
+                    transition: width 200ms;
+                    width: 2rem;
+                }
+            }
+
+            & li:hover {
+                & hr {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
