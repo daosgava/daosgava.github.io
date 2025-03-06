@@ -71,6 +71,9 @@
                     }
 
                     & .logo:hover {
+                        & p {
+                            font-weight: 600;
+                        }
 
                         & img {
                             filter: unset;
