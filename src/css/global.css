@@ -32,6 +32,10 @@
     opacity: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 @media only screen and (max-width: 768px) {
     #app {
         padding-inline: .5rem;

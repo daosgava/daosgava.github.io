@@ -24,7 +24,7 @@
             & .vertical-line {
                 background: var(--text-color);
                 height: auto;
-                width: .2rem;
+                width: 0.2rem;
             }
 
             & .job {
@@ -118,8 +118,24 @@
         justify-content: center;
         width: 100%;
     }
-}
 
-.hidden {
-    display: none;
+    @media only screen and (max-width: 768px) {
+        & .about-content {
+            flex-direction: column;
+            gap: 1rem;
+
+            & .highlight {
+                font-size: 2rem;
+                max-width: 100%;
+            }
+
+            & li:last-child {
+                margin-bottom: 0rem;
+            }
+        }
+
+        & .more-links {
+            display: none;
+        }
+    }
 }
