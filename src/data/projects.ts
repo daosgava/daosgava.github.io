@@ -7,7 +7,7 @@ const PROJECTS = [
   {
     id: 1,
     name: "Opticity Dashboard",
-    description: "This project focuses on building modular and reusable components to render various tools for councils. It integrates data from multiple sources and features a fuzzy search functionality, ensuring quick and easy access to relevant information. Designed for flexibility and efficiency, the Opticity Dashboard enhances usability while maintaining a scalable architecture.",
+    description: "This project focuses on building modular and reusable UI components. It integrates data from multiple sources and features a fuzzy search functionality, ensuring quick and easy access to relevant information.",
     images: [fuzzySearch, councilsTools],
     url: "https://opticity.com.au",
     github: null,
