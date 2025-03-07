@@ -140,7 +140,6 @@
 @media only screen and (max-width: 768px) {
     #experience {
         gap: 0;
-
         & .subtitle {
             order: 1;
         }
@@ -150,6 +149,7 @@
                 flex-direction: column-reverse;
                 & .jobs-container {
                     & .job {
+                        justify-content: start;
                         padding: 1rem;
                     }
                 }
