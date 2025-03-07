@@ -114,7 +114,8 @@
             padding: 1rem;
 
             & .highlight {
-                font-size: 1.5rem;
+                font-size: 1.2rem;
+                font-weight: 400;
                 max-width: 100%;
             }
 
@@ -128,7 +129,8 @@
         }
 
         & .tech-stack-title {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
         }
     }
 }

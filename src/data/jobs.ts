@@ -9,7 +9,7 @@ const JOBS = [
     description:
       "Ironbark Sustainability helps councils and their communities reduce greenhouse emissions.",
     responsibilities: [
-      "Developed reusable and modular UI components while following best coding practices.",
+      "Developed reusable and modular UI components.",
       "Refactored and optimized backend services to enhance performance and scalability.",
     ],
     technologies: [
@@ -25,7 +25,7 @@ const JOBS = [
     title: "Sr Developer",
     company: {
       name: "Knot",
-      url: "#",
+      url: "https://knot.com.co",
     },
     duration: "Nov 2023 - Jul 2024",
     description:

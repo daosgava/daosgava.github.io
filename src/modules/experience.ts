@@ -86,8 +86,8 @@ const renderJobs = (start: number, end: number) => {
 };
 
 const toggleControls = (currentIndex: number) => {
-  const previousButton = document.querySelector(".jobs .previous");
-  const nextButton = document.querySelector(".jobs .next");
+  const previousButton = document.querySelector(".control-container .previous");
+  const nextButton = document.querySelector(".control-container .next");
   nextButton?.classList.remove("transparent");
   previousButton?.classList.remove("transparent");
 
@@ -126,7 +126,7 @@ const initializeJobsCarousel = () => {
   renderJobs(0, itemsPerSlide.getState());
   toggleControls(0);
 
-  const previousButton = document.querySelector(".jobs .previous");
+  const previousButton = document.querySelector(".previous");
   previousButton?.addEventListener("click", (e) => {
     e.preventDefault();
     handleClickControl({
@@ -135,7 +135,7 @@ const initializeJobsCarousel = () => {
     });
   });
 
-  const nextButton = document.querySelector(".jobs .next");
+  const nextButton = document.querySelector(".next");
   nextButton?.addEventListener("click", (e) => {
     e.preventDefault();
     handleClickControl({
@@ -148,11 +148,13 @@ const initializeJobsCarousel = () => {
 const experienceMarkup = `
   <section id="experience" class="section-container">
     <h2 class="subtitle">Experience<hr></h2>
-    <div class="jobs">
+    <div class="experience-content">
       <div class="control-container">
         <a class="control previous" href="#">❮<hr></a>
       </div>
-      <div class="jobs-container"></div>
+      <div class="jobs">
+        <div class="jobs-container"></div>
+      </div>
       <div class="control-container">
         <a class="control next" href="#">❯<hr></a>
       </div>
