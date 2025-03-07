@@ -21,13 +21,12 @@
     flex-direction: column;
     justify-content: start;
     padding-block: 5rem;
-    height: 100vh;
+    height: 100%;
 
     & .projects-content {
         align-items: center;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
 
         & .projects-menu {
             padding: 1rem;
@@ -178,6 +177,7 @@
 @media only screen and (min-width: 1900px) {
     #projects {
         & .projects-content {
+            gap: 2rem;
             & .project-container {
                 & .images {
                     & .images-container {
