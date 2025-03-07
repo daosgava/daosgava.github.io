@@ -54,8 +54,7 @@ const JOBS = [
       "Bixlabs is a company that offers nearshore staff augmentation services to startups in the U.S.",
     additional_info: "Worked for The Institute of Applied Metatheory.",
     responsibilities: [
-      "Developed a Figma-like application for generating compositions and diagrams.",
-      "Worked on both the frontend and backend, and integrated with the OpenAI API.",
+      "Developed a Figma-like application integrated with the OpenAI API for generating compositions and diagrams.",
     ],
     technologies: [
       "Vue.js",
