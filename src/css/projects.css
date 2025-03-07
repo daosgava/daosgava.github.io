@@ -135,7 +135,6 @@
 
 @media only screen and (max-width: 992px) {
     #projects {
-        height: 100%;
         & .projects-content {
             gap: 1rem;
             height: 100%;
@@ -162,7 +161,6 @@
 
 @media only screen and (max-width: 768px) {
     #projects {
-        height: 100vh;
         & .projects-content {
             flex-direction: column-reverse;
             & .project-container {
