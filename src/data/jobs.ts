@@ -100,7 +100,7 @@ const JOBS = [
     additional_info:
       "Collaborated on projects for clients such as Jet/Walmart and Morningstar.",
     responsibilities: [
-      "Implemented and integrated micro frontend components into Jupyter Lab.",
+      "Implemented and integrated UI components into Jupyter Lab.",
       "Implemented and integrated CCPA regulations into jet.com.",
     ],
     technologies: [

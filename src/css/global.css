@@ -41,4 +41,8 @@
         padding-inline: .5rem;
         overflow: hidden;
     }
+
+    .subtitle {
+        font-size: 2rem;
+    }
 }
