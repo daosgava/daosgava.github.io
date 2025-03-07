@@ -14,10 +14,10 @@ const aboutMarkup = `
           Proficient in a wide range of modern technologies, including Cloud Native solutions.
         </li>
         <li>
-          Fluent in Spanish (native) and English (C1, IELTS certified).
+          Driven by challenges, solving complex problems, and delivering effective solutions.
         </li>
         <li>
-          Driven by challenges, solving complex problems, and delivering effective solutions.
+          Fluent in Spanish (native) and English (C1, IELTS certified).
         </li>
       </ul>
     </div>
