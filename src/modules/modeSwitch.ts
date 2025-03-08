@@ -43,7 +43,7 @@ const initializeSwitchMode = () => {
 };
 
 const modeSwitchMarkup = `
-  <button id="mode-switch"></button>
+  <button id="mode-switch" aria-label="Toggle dark mode"></button>
 `;
 
 export { modeSwitchMarkup, initializeSwitchMode };

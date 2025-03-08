@@ -100,7 +100,7 @@
                     min-height: 3rem;
 
                     & .scroll-sign {
-                        animation: lighteffect 1s linear infinite alternate;
+                        animation: lighteffect 1s ease-out infinite alternate;
                         display: flex;
                         flex-direction: row;
                         font-style: italic;
@@ -108,14 +108,16 @@
                         gap: 0.5rem;
 
                         & .arrow {
-                            animation: moveforward 1s linear infinite alternate;
+                            animation: moveforward 1s ease-out infinite alternate;
                             display: flex;
                             font-weight: 500;
                         }
                     }
 
                     & .hidden {
-                        display: none;
+                        opacity: 0;
+                        visibility: hidden;
+                        pointer-events: none;
                     }
                 }
             }

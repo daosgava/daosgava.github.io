@@ -27,9 +27,10 @@ const imagesScrollingDetector = () => {
     imagesContainer?.scrollTo(imagesContainer.scrollWidth, 0);
   });
 
-  imagesContainer?.addEventListener("scrollend", (e) => {
+  imagesContainer?.addEventListener("scroll", (e) => {
     const target = e.target as HTMLElement;
     const window = 200;
+
     if (
       target.scrollLeft + window >=
       imagesContainer.getBoundingClientRect().width
@@ -37,6 +38,7 @@ const imagesScrollingDetector = () => {
       scrollSign!.classList.add("hidden");
       return;
     }
+
     scrollSign!.classList.remove("hidden");
   });
 };
