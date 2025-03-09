@@ -13,7 +13,7 @@
         & img {
             height: 1.1rem;
             width: 1.1rem;
-            filter: drop-shadow(0rem 0rem .5rem white);
+            filter: drop-shadow(0rem 0rem .2rem white);
         }
     }
 
@@ -90,13 +90,17 @@
         background: var(--bg-color);
         display: flex;
         flex-direction: column;
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-weight: 300;
         justify-content: center;
         height: 100%;
+        left: 0;
         padding: 1rem;
         position: fixed;
         top: 0;
+        overflow: hidden;
+        touch-action: none;
+        pointer-events: auto;
         width: 100%;
         z-index: 10;
 
@@ -107,6 +111,7 @@
         }
 
         & .close-mobile-menu {
+            align-items: center;
             font-size: 2rem;
             padding: 0;
             position: absolute;
@@ -114,7 +119,6 @@
             top: 1.4rem;
             height: 1rem;
             display: flex;
-            align-items: center;
             justify-content: center;
             width: 2rem;
             line-height: 2rem;

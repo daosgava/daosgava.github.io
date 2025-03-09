@@ -24,7 +24,7 @@ const menuMarkup = `
   <nav class="menu">
     ${burger}
     <a class="menu-item logo" href="#home"><img src="${logo}" alt="Daniel Garcia - Software Developer"/></a>
-    <a class="menu-item" href="#about">About</a>
+    <a class="menu-item" href="#about">About Me</a>
     <a class="menu-item" href="#experience">Experience</a>
     <a class="menu-item" href="#projects">Projects</a>
     <a class="menu-item" href="#contact">Contact</a>
