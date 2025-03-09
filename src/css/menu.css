@@ -10,16 +10,18 @@
 
     & .logo {
         transition: all 200ms;
-    }
-
-    & img {
-        width: 1.1rem;
+        & img {
+            height: 1.1rem;
+            width: 1.1rem;
+            filter: drop-shadow(0rem 0rem .5rem white);
+        }
     }
 
     & .logo:hover {
         transform: scale(110%);
         transform: rotate(180deg);
         & img {
+            height: 1.2rem;
             width: 1.2rem;
         }
     }
@@ -33,16 +35,94 @@
 @media only screen and (max-width: 768px) {
     .menu {
         gap: .5rem;
-        justify-content: space-evenly;
+        justify-content: space-around;
         padding: 0;
         width: 100%;
 
-        & .logo {
+        & .menu-item {
             display: none;
         }
 
-        & .menu-item {
-            padding: .3rem;
+        & .burger-menu {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 1.2rem;
+            padding: 0;
+            width: 1.2rem;
+            border: none;
+            cursor: pointer;
+
+            & span {
+                border-bottom: .2rem solid var(--text-color);
+                height: 100%;
+                width: 100%;
+            }
         }
+
+        & .burger-menu:focus {
+            outline: none;
+        }
+
+        & .logo {
+            align-items: center;
+            display: flex;
+            padding: 0;
+            justify-content: center;
+            & img {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+
+        & .logo:hover {
+            transform: unset;
+            & img {
+                height: 1.5rem;
+                width: 1.5rem;
+            }
+        }
+    }
+
+    .mobile-menu {
+        align-items: center;
+        background: var(--bg-color);
+        display: flex;
+        flex-direction: column;
+        font-size: 3rem;
+        font-weight: 300;
+        justify-content: center;
+        height: 100%;
+        padding: 1rem;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+
+        & a {
+            font-style: italic;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        & .close-mobile-menu {
+            font-size: 2rem;
+            padding: 0;
+            position: absolute;
+            right: 1.4rem;
+            top: 1.4rem;
+            height: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            line-height: 2rem;
+            border: none;
+        }
+    }
+
+    .hidden {
+        display: none;
     }
 }
