@@ -26,10 +26,11 @@
 @media only screen and (max-width: 992px) {
     #contact {
         align-items: center;
-        justify-content: space-evenly;
+        flex-direction: column;
         padding: 0;
         gap: 0;
         min-height: 20rem;
+        justify-content: center;
 
         & .subtitle {
             font-size: 3rem;
