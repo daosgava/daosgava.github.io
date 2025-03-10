@@ -3,7 +3,7 @@ import logo from "../images/logo.png";
 
 const MobileMenuMarkup = `
   <nav class="mobile-menu hidden">
-    <a class="menu-item" href="#about">Home</a>
+    <a class="menu-item" href="#home">Home</a>
     <a class="menu-item" href="#about">About</a>
     <a class="menu-item" href="#experience">Experience</a>
     <a class="menu-item" href="#projects">Projects</a>
