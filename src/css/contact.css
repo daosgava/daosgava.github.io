@@ -39,7 +39,7 @@
         }
 
         & .email {
-            font-size: 1.7rem;
+            font-size: min(7vw, 1.7rem);
         }
     }
 }
