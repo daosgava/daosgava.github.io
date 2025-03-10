@@ -1,23 +1,22 @@
 import { modeSwitchMarkup } from "./modeSwitch";
 import logo from "../images/logo.png";
 
-const MobileMenuMarkup = `
-  <nav class="mobile-menu hidden">
-    <a class="menu-item" href="#home">Home</a>
-    <a class="menu-item" href="#about">About</a>
-    <a class="menu-item" href="#experience">Experience</a>
-    <a class="menu-item" href="#projects">Projects</a>
-    <a class="menu-item" href="#contact">Contact</a>
-    <button class="close-mobile-menu">x</button>
-  </nav>
-`;
-
 const burger = `
   <div class="burger-menu">
     <span></span>
     <span></span>
     <span></span>
   </div>
+`;
+
+const MobileMenuMarkup = `
+  <nav class="mobile-menu hidden">
+    <a class="menu-item" href="#about">About</a>
+    <a class="menu-item" href="#experience">Experience</a>
+    <a class="menu-item" href="#projects">Projects</a>
+    <a class="menu-item" href="#contact">Contact</a>
+    ${burger}
+  </nav>
 `;
 
 const menuMarkup = `
@@ -34,20 +33,16 @@ const menuMarkup = `
 `;
 
 const initializeMobileMenu = () => {
-  const burgerMenu = document.querySelector(".burger-menu");
+  const burgerMenu = document.querySelectorAll(".burger-menu");
   const menuContainer = document.querySelector(".menu");
   const mobileMenu = document.querySelector(".mobile-menu");
 
-  burgerMenu?.addEventListener("click", () => {
-    menuContainer?.classList.toggle("hidden");
-    mobileMenu?.classList.toggle("hidden");
-  });
-
-  const closeMobileMenu = document.querySelector(".close-mobile-menu");
-  closeMobileMenu?.addEventListener("click", () => {
-    menuContainer?.classList.remove("hidden");
-    mobileMenu?.classList.add("hidden");
-  })
+  burgerMenu?.forEach((menu) =>
+    menu.addEventListener("click", () => {
+      mobileMenu?.classList.toggle("hidden");
+      menuContainer?.classList.toggle("hidden");
+    }),
+  );
 };
 
 const initializeMenuItems = () => {
