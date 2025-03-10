@@ -2,31 +2,39 @@
     border-top: .2rem solid var(--text-color);
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    height: 50vh;
+    gap: 2rem;
+    height: 100%;
+    min-height: 40rem;
+    padding: 2rem;
 
     & .subtitle {
         font-size: 5rem;
         font-weight: 600;
         text-align: left;
-        width: 100%;
+        padding: 1rem;
+        width: 40%;
     }
 
     & .email {
         font-size: 4rem;
+        padding: 1rem;
     }
 }
 
 @media only screen and (max-width: 992px) {
     #contact {
         align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        height: 40vh;
+        justify-content: space-evenly;
+        padding: 0;
+        gap: 0;
+        min-height: 20rem;
 
         & .subtitle {
             font-size: 3rem;
             text-align: center;
+            width: 100%;
         }
 
         & .email {

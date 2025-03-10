@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     padding-block: 5rem;
-    height: 100vh;
+    height: 100%;
 
     & .experience-content {
         display: flex;
@@ -15,7 +15,7 @@
         & .jobs {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             width: 100%;
 
@@ -41,7 +41,6 @@
                     justify-content: center;
                     min-width: 50%;
                     padding: 2rem;
-                    height: 65vh;
 
                     & .logos-container {
                         display: flex;
@@ -101,7 +100,7 @@
         & .control-container {
             align-items: center;
             display: flex;
-            height: 100%;
+            height: 50vh;
 
             & .control {
                 align-items: center;

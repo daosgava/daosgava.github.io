@@ -148,6 +148,7 @@ const initializeJobsCarousel = () => {
 const experienceMarkup = `
   <section id="experience" class="section-container">
     <h2 class="subtitle">Experience<hr></h2>
+    <div class="page-counter"></div>
     <div class="experience-content">
       <div class="control-container">
         <a class="control previous" href="#">❮<hr></a>
@@ -159,7 +160,6 @@ const experienceMarkup = `
         <a class="control next" href="#">❯<hr></a>
       </div>
     </div>
-    <div class="page-counter"></div>
   </section>
 `;
 
