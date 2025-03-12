@@ -46,7 +46,7 @@ const initializeMobileMenu = () => {
 };
 
 const initializeMenuItems = () => {
-  const menuItems = document.querySelectorAll(".menu-item");
+  const menuItems = document.querySelectorAll(".menu-item:not(.logo)");
   menuItems.forEach((item) => {
     item.addEventListener("mouseenter", (event) => {
       const current = event.currentTarget as HTMLElement;

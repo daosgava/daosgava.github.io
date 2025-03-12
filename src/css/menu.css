@@ -25,6 +25,8 @@
         & img {
             height: 1.2rem;
             width: 1.2rem;
+            transform: scale(110%);
+            transform: rotate(180deg);
         }
     }
 
