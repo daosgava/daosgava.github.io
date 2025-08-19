@@ -1,4 +1,3 @@
-import mapBoxMapillary from "../images/projects/mapillary/mapbox-mapillary.png";
 import csharpCompiler from "../images/projects/csharpCompiler/csharp-compiler.png";
 import councilsTools from "../images/projects/opticity/councils-tools.png";
 import fuzzySearch from "../images/projects/opticity/fuzzy-search.png";
