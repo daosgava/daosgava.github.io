@@ -26,15 +26,6 @@ const PROJECTS = [
   },
   {
     id: 3,
-    name: "Map & Street View",
-    description: "This project is a web-based solution that combines the mapping capabilities of Mapbox with the street-level imagery of Mapillary. It allows users to navigate through interactive maps and panoramic street views.",
-    images: [mapBoxMapillary],
-    url: null,
-    github: "https://github.com/daosgava/poc-mapbox-mapillary-integration",
-    technologies: ["Javascript", "Node.js", "Mapbox API", "Mapillary API"],
-  },
-  {
-    id: 4,
     name: "C# Compiler & WebAssembly",
     description: "This project is a prototype of a browser-based C# code editor powered by WebAssembly. Users can write, compile, and execute C# code directly in their browser.",
     images: [csharpCompiler],
