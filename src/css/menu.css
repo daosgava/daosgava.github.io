@@ -10,24 +10,18 @@
     padding: 0.5rem 1rem;
 
     & .logo {
-        transition: all 200ms;
+        height: 2.1rem;
+        width: 2.1rem;
         & img {
-            height: 1.1rem;
-            width: 1.1rem;
             filter: drop-shadow(0.1rem 0.1rem 0.01rem var(--light-color))
                 drop-shadow(0rem 0rem 0.2rem var(--light-color));
+            transition: all 200ms;
         }
     }
 
     & .logo:hover {
         transform: scale(110%);
         transform: rotate(180deg);
-        & img {
-            height: 1.2rem;
-            width: 1.2rem;
-            transform: scale(110%);
-            transform: rotate(180deg);
-        }
     }
 
     & .menu-item {
