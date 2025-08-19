@@ -1,11 +1,31 @@
 const JOBS = [
   {
+    title: "Sr Software Developer",
+    company: {
+      name: "Myer",
+      url: "https://www.myer.com.au/",
+    },
+    duration: "Apr 2025 - Present",
+    description:
+      "Myer is a well-known department store chain in Australia.",
+    responsibilities: [
+      "Currently working on delivering a new cart and checkout experience.",
+      "Implemented new components and user flows based on design specifications.",
+    ],
+    technologies: [
+      "TypeScript",
+      "TanStack",
+      "React.js",
+      "Nx",
+    ],
+  },
+  {
     title: "Software Developer",
     company: {
       name: "Ironbark Sustainability",
       url: "https://www.ironbarksustainability.com.au",
     },
-    duration: "Jul 2024 - Present",
+    duration: "Jul 2024 - Mar 2025",
     description:
       "Ironbark Sustainability helps councils and their communities reduce greenhouse emissions.",
     responsibilities: [
@@ -19,28 +39,6 @@ const JOBS = [
       "PostgreSQL",
       "Docker",
       "AWS",
-    ],
-  },
-  {
-    title: "Sr Developer",
-    company: {
-      name: "Knot",
-      url: "https://knot.com.co",
-    },
-    duration: "Nov 2023 - Jul 2024",
-    description:
-      "Knot is a startup specializing in innovative software solutions.",
-    responsibilities: [
-      "Migrated a web application from Azure to AWS, implementing a microservices architecture and leveraging the AWS ecosystem.",
-      "Developed and managed infrastructure assets using Infrastructure as Code (IaC).",
-    ],
-    technologies: [
-      "Terraform",
-      "Kubernetes",
-      "Kafka",
-      "MongoDB",
-      "Docker",
-      "Next.js",
     ],
   },
   {

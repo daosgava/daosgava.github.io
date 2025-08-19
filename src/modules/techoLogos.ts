@@ -19,6 +19,8 @@ import nestLogo from "../images/techs/nestjs.svg";
 import graphqlLogo from "../images/techs/graphql.svg";
 import socketIOLogo from "../images/techs/socket-io.svg";
 import mongodbLogo from "../images/techs/mongodb.svg";
+import tanStackLogo from "../images/techs/tanstack.svg";
+import nxLogo from "../images/techs/nx.svg"
 
 const LOGOS = [
   { name: "JavaScript", url: jsLogo },
@@ -42,6 +44,8 @@ const LOGOS = [
   { name: "GraphQL", url: graphqlLogo },
   { name: "Socket.IO", url: socketIOLogo },
   { name: "MongoDB", url: mongodbLogo },
+  { name: "TanStack", url: tanStackLogo },
+  { name: "Nx", url: nxLogo },
 ];
 
 export { LOGOS };
